@@ -1,0 +1,22 @@
+{
+  "name": "noveler",
+  "version": "1.0.0",
+  "description": "an specialized editor for novels",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron . ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.main.json && tsc -p tsconfig.renderer.json && cp src/index.html dist/index.html  && cp src/styles.css dist/styles.css    && cp -r src/styles dist/ "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/electron": "^1.6.12",
+    "electron": "^36.2.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^22.15.21"
+  }
+}

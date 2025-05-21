@@ -1,0 +1,6 @@
+#editor {
+  flex-grow: 1;
+  height: 100%;
+  background-color: #edf3f4; /* fallback in case Monaco fails */
+  border: #3d4446;
+}
