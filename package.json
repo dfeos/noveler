@@ -6,17 +6,26 @@
   "scripts": {
     "start": "electron . ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.main.json && tsc -p tsconfig.renderer.json && cp src/index.html dist/index.html  && cp src/styles.css dist/styles.css    && cp -r src/styles dist/ "
+    "build": "tsc -p tsconfig.json && cp src/index.html dist/index.html  && cp src/styles.css dist/styles.css    && cp -r src/styles dist/ "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/electron": "^1.6.12",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "autoprefixer": "^10.4.21",
     "electron": "^36.2.1",
+    "postcss": "^8.5.3",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@types/node": "^22.15.21"
+    "@codemirror/lang-markdown": "^6.3.2",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@types/node": "^22.15.21",
+    "@uiw/react-codemirror": "^4.23.12",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
