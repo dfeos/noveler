@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from 'electron';
-import * as path from 'path';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,8 +12,9 @@ function createWindow() {
       nodeIntegration: true    // allow using fs, path in renderer
     }
   });
-
-  win.loadFile(path.resolve(__dirname, 'index.html')); // load compiled HTML
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  win.loadFile(path.join(__dirname, 'index.html'));
 }
 
 app.whenReady().then(createWindow);

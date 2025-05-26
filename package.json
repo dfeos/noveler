@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron . ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.json && cp src/index.html dist/index.html  && cp src/styles.css dist/styles.css    && cp -r src/styles dist/ "
+    "build": "tsc -p tsconfig.renderer.json && cp src/index.html dist/index.html  && cp src/styles.css dist/styles.css    && cp -r src/styles dist/ "
   },
   "keywords": [],
   "author": "",
