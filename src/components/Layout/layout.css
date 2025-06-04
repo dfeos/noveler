@@ -1,0 +1,177 @@
+/* Layout Container */
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #f8f9fa;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.current-project {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.project-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.project-stats span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  position: relative;
+}
+
+/* When character detail is open, adjust content width */
+.layout:has(.character-detail) .content {
+  margin-right: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .layout:has(.character-detail) .content {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .header h1 {
+    font-size: 18px;
+  }
+  
+  .header-project-info {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .current-project {
+    font-size: 14px;
+  }
+  
+  .project-stats {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .project-stats span {
+    font-size: 11px;
+  }
+  
+  .main-content {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px;
+  }
+  
+  .header h1 {
+    font-size: 16px;
+  }
+  
+  .current-project {
+    font-size: 13px;
+  }
+}
+
+/* Smooth transitions */
+.content {
+  transition: margin-right 0.3s ease;
+}
+
+/* Loading states */
+.layout.loading {
+  pointer-events: none;
+}
+
+.layout.loading::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 249, 250, 0.8);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+}
+
+/* Focus styles for accessibility */
+.header:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -2px;
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .sidebar {
+    display: none;
+  }
+  
+  .content {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

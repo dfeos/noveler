@@ -1,0 +1,381 @@
+/* Character Detail Container */
+.character-detail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid #e1e5e9;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Character Detail Header */
+.character-detail-header {
+  padding: 20px;
+  border-bottom: 1px solid #e1e5e9;
+  background: #f8f9fa;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #e9ecef;
+  color: #6c757d;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+.character-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.character-avatar-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-icon-large {
+  font-size: 28px;
+}
+
+.character-title-info {
+  flex: 1;
+}
+
+.character-title-info h2 {
+  margin: 0 0 8px 0;
+  color: #343a40;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.character-name-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.role-badge-large {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.role-badge-large.protagonist {
+  background: #d4edda;
+  color: #155724;
+}
+
+.role-badge-large.antagonist {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.role-badge-large.supporting {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.role-badge-large.minor {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.character-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.edit-btn:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+.save-btn {
+  background: #28a745;
+  color: #ffffff;
+  border-color: #28a745;
+}
+
+.save-btn:hover {
+  background: #218838;
+  border-color: #218838;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: #ffffff;
+  border-color: #6c757d;
+}
+
+.cancel-btn:hover {
+  background: #545b62;
+  border-color: #545b62;
+}
+
+/* Character Detail Content */
+.character-detail-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.character-section {
+  margin-bottom: 25px;
+}
+
+.character-section h3 {
+  margin: 0 0 12px 0;
+  color: #343a40;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 5px;
+}
+
+.character-section p {
+  margin: 0;
+  color: #495057;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.character-section textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.character-section textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.character-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.character-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.character-field span {
+  color: #495057;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.character-field input,
+.character-field select {
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.character-field input:focus,
+.character-field select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Character Metadata */
+.character-metadata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metadata-item label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-item span {
+  color: #495057;
+  font-size: 13px;
+}
+
+/* Role Badge in Field */
+.character-field .role-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.character-field .role-badge.protagonist {
+  background: #d4edda;
+  color: #155724;
+}
+
+.character-field .role-badge.antagonist {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.character-field .role-badge.supporting {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.character-field .role-badge.minor {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .character-detail {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .character-grid,
+  .character-metadata {
+    grid-template-columns: 1fr;
+  }
+  
+  .character-title {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .character-actions {
+    justify-content: center;
+  }
+}
+
+/* Scrollbar Styling */
+.character-detail-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.character-detail-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.character-detail-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.character-detail-content::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Animation */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.character-detail {
+  animation: slideInFromRight 0.3s ease-out;
+}
